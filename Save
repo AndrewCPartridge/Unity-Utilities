@@ -1,0 +1,37 @@
+using System.Collections;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+
+
+public class Save : MonoBehaviour
+
+{
+
+    public GameObject player;
+
+    public void save()
+
+    {
+
+        PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
+
+        PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
+
+        PlayerPrefs.SetFloat("PlayerZ", player.transform.position.z);
+
+    }
+
+
+
+    public void load()
+
+    {
+
+        player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
+
+    }
+
+}
